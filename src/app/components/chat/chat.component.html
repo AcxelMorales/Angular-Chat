@@ -1,0 +1,23 @@
+<h1>Messages</h1>
+<hr>
+<form [formGroup]="form" #f="ngForm" (ngSubmit)="send()">
+  <div class="chat-messages" id="chat">
+    <li class="list-group-item" *ngFor="let msg of messages">
+      {{ msg.from }}: {{ msg.body }}
+    </li>
+  </div>
+
+  <input
+    type="text"
+    id="input"
+    class="form-control mt-3"
+    name="text"
+    formControlName="text"
+    placeholder="Message ..."
+    autofocus
+    autocomplete="off"
+    required
+  >
+
+  <input type="submit" value="Send" class="btn btn btn-outline-info mt-3 btn-block">
+</form>

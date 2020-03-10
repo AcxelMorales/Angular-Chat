@@ -1,6 +1,6 @@
-<h1>Messages</h1>
+<h2>Messages</h2>
 <hr>
-<form [formGroup]="form" #f="ngForm" (ngSubmit)="send()">
+<form [formGroup]="form" (ngSubmit)="send()">
   <div class="chat-messages" id="chat">
     <li class="list-group-item" *ngFor="let msg of messages">
       {{ msg.from }}: {{ msg.body }}

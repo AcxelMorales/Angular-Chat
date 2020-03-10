@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+  <div class="col-9">
+
+    <div class="card login">
+      <img src="../../../assets/img/login.jpg" class="card-img-top" alt="iamge">
+      <div class="card-body">
+        <p class="card-text">Welcome!.</p>
+        <form [formGroup]="form" #f="ngForm" class="p-4" (ngSubmit)="login()">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            formControlName="name"
+            placeholder="User name ..."
+            autofocus
+            autocomplete="off"
+            required
+            minlength="2"
+          >
+
+          <button type="submit" class="btn btn-outline-primary btn-block mt-3" [disabled]="f.invalid">Enter</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

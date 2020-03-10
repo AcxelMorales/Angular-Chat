@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
-
-import { WebSocketService } from './services/web-socket.service';
+import { Component, OnInit } from '@angular/core';
+import { ChatService } from './services/chat.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: []
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor(public weSocketService: WebSocketService) { }
+  constructor(private chatService: ChatService) { }
+
+  ngOnInit(): void {
+    this.chatService.getPrivateMessages().subscribe(console.log);
+  }
 
 }

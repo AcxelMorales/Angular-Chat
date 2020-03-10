@@ -13,7 +13,7 @@ export class ChatService {
 
   sendMessage(message: string): void {
     const payload = {
-      from: 'Acxel',
+      from: this.wsService.userService.name,
       body: message
     };
 
@@ -22,6 +22,10 @@ export class ChatService {
 
   getMessages(): Observable<void> {
     return this.wsService.listen('new-message');
+  }
+
+  getPrivateMessages(): Observable<void> {
+    return this.wsService.listen('private-message');
   }
 
 }

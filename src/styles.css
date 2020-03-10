@@ -12,3 +12,8 @@ footer {
   border-radius: 10px;
   overflow-y: scroll;
 }
+
+.login {
+  max-width: 25rem;
+  margin: 0 auto;
+}

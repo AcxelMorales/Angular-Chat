@@ -5,22 +5,23 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
-import { FooterComponent } from './components/footer/footer.component';
-import { ChatComponent } from './components/chat/chat.component';
+import { ComponentsModule } from './components/components.module';
+import { PagesModule } from './pages/pages.module';
 
 const config: SocketIoConfig = { url: environment.webSocketUrl, options: {} };
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FooterComponent,
-    ChatComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    SocketIoModule.forRoot(config)
+    ComponentsModule,
+    PagesModule,
+    SocketIoModule.forRoot(config),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

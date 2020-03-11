@@ -28,4 +28,8 @@ export class ChatService {
     return this.wsService.listen('private-message');
   }
 
+  getUsersOnline(): Observable<void> {
+    return this.wsService.listen('users-online');
+  }
+
 }

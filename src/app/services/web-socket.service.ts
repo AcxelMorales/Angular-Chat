@@ -25,6 +25,7 @@ export class WebSocketService {
   checkSocket(): void {
     this.socket.on('connect', () => {
       this.socketStatus = true;
+      this.loadLocalStorage();
     });
 
     this.socket.on('disconnect', () => {
